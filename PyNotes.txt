@@ -1,1 +1,4 @@
 This is the python notes document
+
+So first, what is python. Its a high level programming language that is easy to use
+and very powerful
