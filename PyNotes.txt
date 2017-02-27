@@ -42,5 +42,8 @@ in the basic things about python. Indentation, Iteration, recursion, modularizat
 	- Python also has a large and comprehisive standard library
 	- Python the language itself is built on top of other languages such as C
 
+_____________________________________________________
+02.27.2017
+
 
 
