@@ -5,12 +5,12 @@ WEEK 6
 NOTES
 
 Good Programming Laws:
-Never repeat yourself. Use Function
+Never repeat yourself. Use Functions
 
 Preaching Code Re-Usability
 - The main purpose behind using functions is for code reusability.
 - You can re-use functions in multiple applications.
-- It Eliminates or reduces drift between your code. Never repeat
+- It eliminates or reduces drift between your code. Never repeat
 
 FUNCTIONS - All lowercase with underscores
 
@@ -24,7 +24,7 @@ In python, when a function is called, it executes whatever is in the function. I
 NOTE ON DOCSTRINGS:
 if you add a docstring to the function, you can type help(fun_cti_on) in the python
 cli and it will show you the contents of the docstring.
-Docstrings can be quoted with "" or ''
+Docstrings can be quoted
 
 Functins with Parameters
 
@@ -37,7 +37,7 @@ this will return 15.
 This tiny function will support strings and lists too because both support +.
 
 By default, the parameters map by position, but when you call the function, you 
-can explicitly name the parameters you're passing. You can also mix the positional
+can explicitly name the parameters youre passing. You can also mix the positional
 and named arguments, but the positional arguments have to come first.
 
 a_sum(y=20, x=10)
@@ -66,7 +66,7 @@ def simple_func():
 	print x
 	print y
 	print z
-	# here, simple_func have it's own namespace, so these x and y's are different
+	# here, simple_func have its own namespace, so these x and y's are different
 	# than the ones in the main program. They're local to this function.
 simple_func()
 print(x)
@@ -114,4 +114,40 @@ print(z)
 # if the function calls a variable it doesnt have, it'll go hunting for it
 # until it ends back up at the module leve.
 
-# next example:
+'''
+Functions Part 2
+Be careful when you're passing in dictionaries and lists and objects becasue
+they can change in your function. However, strings and integers are immutable.
+
+
+the naming standard for functions is the same as it is for variables.
+
+When you import a python module, all executable statements are executed when its imprtd
+functions are still executed when they are called.
+
+Also, when you call a function in a module, you have to call it via [modulename].function. The module name is the filename minus py. You can also add it directly to your programs namespace, but you have to type: from import ____ in order for it to work (keyword from)
+
+'''
+def f1(a_list):
+	a_list.append("whatever")
+a = range(10)
+f1(a)
+print(a)
+# Here, the list A is modified by the function call. 
+# a_list is a local parameter to f1.
+# a is declared in memory, but when you pass the list into the function, it points
+# to the actual a object in memory, so you can modify the object inside a function
+
+def f2(a_list):
+	# At this moment, a_list is a reference to the b object in memory
+	a_list = []
+	# Now, the a_list list points to its own object in memory.
+	a_list.append('something')
+	# This appends something to the blank a_list. 
+	print(a_list)
+
+b = range(10)
+f2(b)
+print(b)
+
+
