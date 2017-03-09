@@ -150,4 +150,31 @@ b = range(10)
 f2(b)
 print(b)
 
+print("################################################")
 
+''' PROJECT 4
+Create a function using your dotted decimal to binary conversion code from Class 3
+In the function, do not prompt for input and do not print for standard output.
+the function should take one variable ip_address and return the IP address in dotted binary format always padded to eight binary digits.
+
+Notes on padding
+The formatting specification mini language tells python how to format something.
+binary variables are actually specially formatted strings wit 0b appended to the front of them. the #010b tells python to format the string as a binary that is 10 characters long. We need 8 digits, but it's 10 characters because the first two are taken up by 0b
+'''
+
+def convert_to_binary(ip_address):
+	# Split the IP address into a list
+	ip_address = ip_address.split('.')
+	# Create a binary list variable
+	ip_address_binary = []
+	for index, octet in enumerate(ip_address): 
+		ip_address_binary.append(format(int(ip_address[index]), '#010b'))
+	# Return the list
+	return ip_address_binary
+
+ip_address = "10.5.0.1"
+
+converted_address = convert_to_binary(ip_address)
+print(converted_address)
+
+	
