@@ -19,7 +19,8 @@ def fun_cti_on():
 	return True
 fun_ction()
 a = fun_cti_on()
-In python, when a function is called, it executes whatever is in the function. If nothing is returned from the function into the normal program, then it returns a NoneType.
+In python, when a function is called, it executes whatever is in the function.
+If nothing is returned from the function into the normal program, then it returns a NoneType.
 
 NOTE ON DOCSTRINGS:
 if you add a docstring to the function, you can type help(fun_cti_on) in the python
@@ -36,7 +37,7 @@ a_sum(5,10)
 this will return 15.
 This tiny function will support strings and lists too because both support +.
 
-By default, the parameters map by position, but when you call the function, you 
+By default, the parameters map by position, but when you call the function, you
 can explicitly name the parameters youre passing. You can also mix the positional
 and named arguments, but the positional arguments have to come first.
 
