@@ -1,0 +1,50 @@
+This is the python notes document
+test
+So first, what is python. Its a high level programming language that is easy to use
+and very powerful
+
+What is Python?
+	- It's a high level programming language.
+	- Designed for readability (using whitespaces and indentation)
+	- It has a syntax that requires fewer lines of code than C++ or Java
+
+Whats Under the Hood:
+- Python had a dynamic type system, automatic memory management
+  - Dynamic Type System
+   - Statically typed languages define objects as Types during the compilation process. Dynamically typed languages that have Duck Typing make assumptions at runtime. The combination of dynamic typing and duck typing make python easy to debug (if a type error happens, the program exits with an informative error), and it makes the code portable and reusable. If I create two different classes with similarly named nested def function()'s
+let say i create 
+class A:
+	def math(self)
+class B:
+	def math(self)
+
+I can reference thse two classes in a separate def() with a single line
+def doesnt_matter(AorB):
+	AorB.math()
+And I put it togerther in a second functin like this:
+def function():
+	TheLetterA = A()
+	TheLetterB = B()
+	doesnt_matter(TheLetterA)
+	doesnt_matter(TheLetterB)
+
+function()
+So for a dynamically typed language with duck typing, doesnt_matter() doesnt care what
+object class you throw at it, so long as there is a funtion called .math() for the
+referenced class. In other words, dont check whether it is a duck, check whether it walks or quacks like one. 
+
+	- Python supports multiple programming paradigms. These paradigms expose
+in the basic things about python. Indentation, Iteration, recursion, modularizaton, etc
+		- Object Oriented
+		- Imperative
+		- Functional
+		- Procedural
+	- Python also has a large and comprehisive standard library
+	- Python the language itself is built on top of other languages such as C
+
+_____________________________________________________
+02.27.2017
+
+
+
+helloworld
