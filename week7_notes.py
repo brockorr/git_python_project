@@ -75,3 +75,50 @@ with open("newfile", r or w) as <varname>:
 # with will automatically close the file after the indent.
 
 the advantage of using the with method is it automatically ensures you will do a close on the file, even if you forget
+'''
+
+# REGULAR EXPRESSIONS
+
+'''
+Using regular expressions in Python
+1. Import re - this imports the regular expression library
+2. dir(re) or help(re)
+3. re.search method
+    - ALWAYS use raw formatted strings in python
+    - a_var = re.search(r"python", <var>
+    - a_var.group() returns the string that was searched for, in this case "python"
+    if re.search(r"python", <var>):
+    - if there is a match, it will return a _sre.SRE_MATCH object, if not, it will
+    -
+4.In regex world Parentheses mean "Im going to save something for later
+    - the period means any character, and the plus sign means one or more times.
+        - so this will grab something until the end of the line, but not newline
+    - a_var = re.search(r"python (.+)", <var>)
+    - a_var.group() will return python and then whatever words come after python
+    - a_var.group(1) will return everything after but not including python  
+    - return a nonetype, so you can test against this.
+    - but what if we want just the next string of characters, and not the whole line?
+    - a_var = re.search(r"python (.+?) "
+        - here the question mark tells it "the shortest string" and the space after )
+        - tells regex which character to stop at, in this case the space character. 
+    - But what if we want to add another word?
+    - a_var = re.search(r"python (.+?) (.+)", a) -- I dont have a ? here becase
+    - the next word is at the end of the line.
+5. Regular expressions can be very cryptic, so when you encounter them in other
+people code, it's very hard to understand and very time consuming to figure out 
+other peoples code.
+
+6. You can also use re.search as a conditional
+    if re.search(r"platform: ", a):
+        blablabla
+7. re.findall
+    - Put a whole file into a string and then search through it.
+    - Remember, even though the whole file is in one string, the regex handles the
+    - newlines fine
+    - re.findall(r"python .+", cdp_data)
+    - re.findall(r"python (.+)", cdp_data)
+    - the difference here is the first returns a list with the word python included.
+    - re.findall(r"python (.+?) (.+)", cdp_data)
+        - This returns a list with a touple containing the next two words after the word python
+    
+'''
