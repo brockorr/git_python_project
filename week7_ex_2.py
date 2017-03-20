@@ -28,7 +28,14 @@ ospf_file = ospf_file.read()
 
 # and now lets play with regex. I want to find
 # the interface, which is a line that does
-# not begin with a space.
-interface = r"^([^\s]*)"
+# not begin with one or more spaces (the PLUS SIGN IS CRITICAL)
+interface = r"(^[^\s]+)"
 attributes = []
-attributes.append(re.findall(interface, ospf_file))
+attributes.append(re.findall(interface, ospf_file, re.MULTILINE))
+
+for i in attributes:
+    for j in i:
+        print type(j)
+        print j
+
+# extract the interface name and description
