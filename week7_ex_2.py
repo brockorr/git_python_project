@@ -31,11 +31,14 @@ ospf_file = ospf_file.read()
 # not begin with one or more spaces (the PLUS SIGN IS CRITICAL)
 interface = r"(^[^\s]+)"
 attributes = []
-attributes.append(re.findall(interface, ospf_file, re.MULTILINE))
-
+attributes.extend(re.findall(interface, ospf_file, re.MULTILINE))
+# re.findall() returns a list. 
+# if I used the .append METHOD then it would append a list to an empty list
+# which is a list inside of a list [[list]], so I use extend, which extends
+print attributes
 for i in attributes:
-    for j in i:
-        print type(j)
-        print j
+    print i
+
+ospf_file.readline()
 
 # extract the interface name and description
