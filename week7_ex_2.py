@@ -23,22 +23,19 @@ import re
 from collections import defaultdict
 
 # next import the file using rb for windows compat. reasons.
-ospf_file = open("class7/OSPF_DATA/ospf_data.txt", "rb")
-ospf_file = ospf_file.read()
+ospf_file_raw = open("class7/OSPF_DATA/ospf_data.txt", "rb")
+ospf_file = ospf_file_raw.read()
 
 # and now lets play with regex. I want to find
 # the interface, which is a line that does
 # not begin with one or more spaces (the PLUS SIGN IS CRITICAL)
-interface = r"(^[^\s]+)"
+interface = r"(^[^\s]+)|(Internet Address\s)(.+?),|(Area)\s(.+)\s|(Network Type)\s(.+),|(Cost:)\s(.)"
 attributes = []
 attributes.extend(re.findall(interface, ospf_file, re.MULTILINE))
+show_int = re.findall(interface, ospf_file, re.MULTILINE)
 # re.findall() returns a list. 
 # if I used the .append METHOD then it would append a list to an empty list
 # which is a list inside of a list [[list]], so I use extend, which extends
 print attributes
-for i in attributes:
-    print i
-
-ospf_file.readline()
 
 # extract the interface name and description
