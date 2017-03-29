@@ -33,4 +33,7 @@ for index, value in hostname_attributes_default_dictionary.iteritems():
        if isinstance(it, list) == True:
             for jx, j in enumerate(it):
                 print j
-                print jx
+
+
+## I need to create an instance of a dictionary.
+## Host([list of things])
