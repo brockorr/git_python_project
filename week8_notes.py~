@@ -52,23 +52,6 @@ if __name__ == '__main__':
     bla
 
 
-PACKAGES
-
->>>import pprint sys
->>>pprint.pprint(sys.path)
-this returns a list of places that python uses to try to find modules and packages.
-A modlue is a python file. A python package is a directory in your filesystem that is constructed in a special way.
-
-To make the directory a package, all you have to do (prior to py33) is create a file __init__.py in the directory.
-
-WHat you can do in the package directory is import modules (files) from packages (directory)
-    import package.module
-    or from packagage import module
-
-
-What hapens when you load a package is __init__.py is executed.
-This makes it so you can have integrated sets of code that you can integrate with one command. 
-
 '''
 import week8_module
 
