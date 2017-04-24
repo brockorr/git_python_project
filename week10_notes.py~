@@ -1,0 +1,16 @@
+#!\usr\bin\python
+
+''' WEEK 10
+
+CONNECTING TO A ROUTER VIA SSH
+
+Create a program that connects to a router over ssh and then retrieves a show version output. 
+
+How to use ParamikoSSH to connecto to a router.
+
+Paramiko is a python library.
+
+
+
+
+'''

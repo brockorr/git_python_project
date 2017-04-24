@@ -54,47 +54,12 @@ Classes and objects - Part
         self.ip = ip <--- self.ip is the attribute, IP is the parameter)
         self.username = username
         self.password = password
-    def a_product(self)
-
 
 ATTRIBUTES belong to objects. class.attribute
 PARAMETERS are the names of the variables that are passed in.
-ARGUMENTS are what you pass inot a class when you are creating an object.  
+ARGUMENTS 
 
 
 rtr3 = NetworkDevice('10.2.2.2', 'ktb', 'some_pass') <---- ('these', 'are', 'arguments')
 
-
-
-INHERITANCE
-
-You could create a class that is based on a previous class.
-
-class SomeClas
-    __init___(self, x, y)
-    self.x = x
-    self.y = 7
-    def a_sum(self)
-
-
-
-class NewClass(SomeClass):
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = i
-        self.z = z
-        SomeClass.__init__(self, x, y)
-b = NewClass(8,9)
-
-
-
-
-Python has this order of, it looks for an attribute inside of an object, then it looks inside the class, and then it looks inside the base classes. SInce Newclass now has __init__ defined, its not going to call the __init__ in SomeClass. If we wanted to do this, you would do:
-
-SomeClass.__init__(self, x, y)
-
-
-
-
-b = NewClass(8, 9, 10)
 
